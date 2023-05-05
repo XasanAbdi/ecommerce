@@ -11,6 +11,6 @@ app.use(express.json())
 app.use('/api/user',userRouter)
 
 const port=process.env.port|| 8888
- app.listen(()=>{
+ app.listen(port, ()=>{
     console.log(`Server is runing on port 8888 ${port}`)
  })
