@@ -6,7 +6,8 @@ export const register=async(req,res)=>{
     const userExits=await Users.findOne({email})
    if (userExits) {
     res.status(400).json({message:'User allready Exists'})
-   }else{
+   }
+   else{
     const user =Users.create({
         name,email,password,address,phone
     }) 
@@ -22,13 +23,14 @@ export const register=async(req,res)=>{
 
 
         })
-    
-    } else{
-        res.status(401).json({message:'invalid user data'});
-    }
 
    }
-      
+   else{
+    res.status(401).json({message:'invalid user data'});
+}
+    
+    
+    }   
  
     
 }
